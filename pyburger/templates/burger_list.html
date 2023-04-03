@@ -2,5 +2,12 @@
 <html lang="en">
 <body>
     <h1>Menu of pyburger</h1>
+    {% for burger in burgers%}
+        <div>
+            {{ burger }}
+            (Price: {{burger.price}}$,
+            Calories: {{burger.calories}}kcal)
+        </div>
+    {% endfor %}
 </body>
 </html>
