@@ -2,5 +2,19 @@
 <html lang="en">
 <body>
     <h1>Search page of pyburger</h1>
+    <div>
+        <form method="GET">
+            <input type="text" name="keyword">
+            <button>Search</button>
+        </form>
+    </div>    
+    <h2>Result</h2>
+    {% for burger in burgers %}
+        <div>
+            {{ burger.name}}
+            (Price: {{ burger.price}}$,
+            Calories: {{ burger.calories}}kcal)
+        </div>
+    {% endfor %}
 </body>
 </html>
