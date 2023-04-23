@@ -1,0 +1,26 @@
+@charset "utf-8";
+
+p {
+    background-color: gainsboro;
+    font-size: large;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
+
+}
+
+h4 {
+    font-size: 18pt;
+}
+
+h3 {
+    font-size: 20pt;
+}
+
+ul {
+    background-color: lightblue;
+}
+
+a {
+    font-size: 30pt;
+}
+
