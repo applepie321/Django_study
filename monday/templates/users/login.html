@@ -7,10 +7,10 @@
 <body>
     <div id="login">
         <form method="POST">
-            <h1>아무거나 대문이름</h1>
+            <h1>월요일 과제 대문</h1>
             {% csrf_token %}
             {{ form.as_p }}
-            <button type="submit" class="btn btn-login">로그인</button>
+            <button type="submit" id="loginButton">로그인</button>
         </form>
     </div>
 </body>
