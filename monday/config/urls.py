@@ -22,7 +22,8 @@ from config.views import index
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path("admin/", admin.site.urls),
+    path("posts/", include("posts.urls")),
     path("users/", include("users.urls")),
     path("", index),
 ]
