@@ -6,21 +6,21 @@ class LoginForm(forms.Form):
     username = forms.CharField(
         min_length=3,
         widget=forms.TextInput(
-            attrs={"placeholder": "사용자명 (3자리 이상)"},
+            attrs={"placeholder": "사용자명"},
         ),
     )
     password = forms.CharField(
         min_length=4,
         widget=forms.PasswordInput(
-            attrs={"placeholder": "비밀번호 (4자리 이상)"},
+            attrs={"placeholder": "비밀번호"},
         ),
     )
     
     
 class SignupForm(forms.Form):
-    username = forms.CharField()
-    password1 = forms.CharField(widget=forms.PasswordInput)
-    password2 = forms.CharField(widget=forms.PasswordInput)
+    username = forms.CharField(min_length=3, widget=forms.TextInput(attrs={"placeholder": "사용자명 3자리 이상"}))
+    password1 = forms.CharField(widget=forms.PasswordInput(attrs={"placeholder": "비밀번호 4자리 이상"}))
+    password2 = forms.CharField(widget=forms.PasswordInput(attrs={"placeholder": "비밀번호 확인"}))
     
     def clean_username(self):
         username = self.cleaned_data["username"]
