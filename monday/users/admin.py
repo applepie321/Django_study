@@ -4,4 +4,4 @@ from users.models import User
 
 @admin.register(User)
 class CustomUserAdmin(UserAdmin):
-    pass
+    fieldsets = []
