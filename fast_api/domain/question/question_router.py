@@ -1,15 +1,14 @@
-from fastapi import APIRouter
+from fastapi import APIRouter, Depends
+from sqlalchemy.orm import Session
 
-from database import SessionLocal
-from models import Question
+from database import get_db
+from domain.question import question_schema, question_crud
 
 router = APIRouter(
     prefix="/api/question",
 )
 
-@router.get("/list")
-def question_list():
-    db = SessionLocal()
-    _qustion_list = db.query(Question).order_by(Question.create_date.desc()).all()
-    db.close()
-    return _qustion_list
+@router.get("/list", response_model=list[question_schema.Question])
+def question_list(db: Session = Depends(get_db)):
+    _question_list = question_crud.get_question_list(db)
+    return _question_list
