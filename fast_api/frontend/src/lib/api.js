@@ -1,3 +1,5 @@
+import qs from 
+
 const fastapi = (operation, url, params, success_callback, failure_callback) => {
     let method = operation
     let content_type = 'application/json'
