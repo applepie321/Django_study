@@ -24,7 +24,7 @@
                         $access_token = ''
                         $username = ''
                         $is_login = false
-                    }}>로그아웃 ({username})</a>w
+                    }}>로그아웃 ({username})</a>
 
                 {:else}
                     <li class="nav-item">
