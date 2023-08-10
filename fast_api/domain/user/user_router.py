@@ -2,8 +2,8 @@ from datetime import timedelta, datetime
 
 from fastapi import APIRouter, HTTPException
 from fastapi import Depends
-from fastapi.security import OAuth2PasswordRequestForm
-from jose import jwt
+from fastapi.security import OAuth2PasswordRequestForm, OAuth2PasswordBearer
+from jose import jwt, JWTError
 from sqlalchemy.orm import Session
 from starlette import status
 
@@ -18,6 +18,7 @@ router = APIRouter(
 ACCESS_TOKEN_EXPIRE_MINUTES = 60 * 24
 SECRET_KEY = "101aa1e53d552371805d66a416c8050731972a52a6d39f39ce355138d8aec92a"
 ALGORITHM = "H256"
+oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/api/user/login")
 
 
 @router.post("/create", status_code=status.HTTP_204_NO_CONTENT)
